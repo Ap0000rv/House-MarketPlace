@@ -340,7 +340,7 @@ function CreateListing() {
 					/>
 
 					{!geolocationEnabled && (
-						<div className="formLatLng flex">
+						<div className="formLatLng">
 							<div>
 								<label className="formLabel">Latitude</label>
 								<input

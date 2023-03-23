@@ -18,10 +18,10 @@ function ListingItem({ listing, id, onEdit, onDelete }) {
 					className="categoryListingImg"
 				/>
 				<div className="categoryListingDetails">
+					<p className="categoryListingName">{listing.name}</p>
 					<p className="categoryListingLocation">
 						{listing.location}
 					</p>
-					<p className="categoryListingName">{listing.name}</p>
 					<p className="categoryListingPrice">
 						$
 						{listing.offer
@@ -56,9 +56,9 @@ function ListingItem({ listing, id, onEdit, onDelete }) {
 					onClick={() => onDelete(listing.id, listing.name)}
 				/>
 			)}
-
-			{onEdit && <EditIcon className="editIcon" onClick={()=>onEdit(id)}/>}
-
+			{onEdit && (
+				<EditIcon className="editIcon" onClick={() => onEdit(id)} />
+			)}
 		</li>
 	);
 }

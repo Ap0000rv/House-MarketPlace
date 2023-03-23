@@ -365,6 +365,7 @@ function EditListing() {
 					</div>
 					<label className="formLabel">Address</label>
 					<textarea
+						rows={3}
 						className="formInputAddress"
 						type="text"
 						id="address"
@@ -374,7 +375,7 @@ function EditListing() {
 					/>
 
 					{!geolocationEnabled && (
-						<div className="formLatLng flex">
+						<div className="formLatLng">
 							<div>
 								<label className="formLabel">Latitude</label>
 								<input
