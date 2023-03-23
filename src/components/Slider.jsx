@@ -64,7 +64,7 @@ function Slider() {
 							<div
 								style={{
 									background: `url(${data.imgUrls[0]}) center no-repeat`,
-									backgroundSize: "contain",
+									backgroundSize: "cover",
 								}}
 								className="swiperSlideDiv">
 								<p className="swiperSlideText">{data.name}</p>

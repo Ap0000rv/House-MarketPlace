@@ -47,7 +47,7 @@ function Listing() {
 							style={{
 								background: `url(${listing.imgUrls[index]})
                 center no-repeat`,
-								backgroundSize: "contain",
+								backgroundSize:"contain",
 							}}
 							className="swiperSlideDiv"></div>
 					</SwiperSlide>
