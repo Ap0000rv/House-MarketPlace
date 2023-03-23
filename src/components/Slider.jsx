@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import { db } from "../firebase.config";
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import Spinner from "./Spinner";
 import { list } from "firebase/storage";
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
 function Slider() {
 	const [loading, setLoading] = useState(true);
@@ -46,7 +46,7 @@ function Slider() {
 	}
 
 	if (listings.length === 0) {
-		return <></>
+		return <></>;
 	}
 
 	return (
@@ -54,7 +54,15 @@ function Slider() {
 			<>
 				<p className="exploreHeading">Recommended</p>
 
-				<Swiper slidesPerView={1} pagination={{ clickable: true }}>
+				<Swiper
+					slidesPerView={1}
+					pagination={{ clickable: true }}
+					loop={true}
+					autoplay={{
+						delay: 3000,
+						pauseOnMouseEnter: true,
+						disableOnInteraction: false,
+					}}>
 					{listings.map(({ data, id }) => (
 						<SwiperSlide
 							key={id}
@@ -69,13 +77,9 @@ function Slider() {
 								className="swiperSlideDiv">
 								<p className="swiperSlideText">{data.name}</p>
 								<p className="swiperSlidePrice">
-									$
-									{data.discountedPrice
-										 ??
-										data.regularPrice
-									}{" "}
+									${data.discountedPrice ?? data.regularPrice}{" "}
 									{data.type === "rent" && "/month"}
-								    </p>
+								</p>
 							</div>
 						</SwiperSlide>
 					))}
