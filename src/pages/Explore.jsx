@@ -31,6 +31,8 @@ const Explore = () => {
 						<p className="exploreCategoryName">places for sell</p>
 					</Link>
 				</div>
+				<div className="space">
+				</div>
 			</main>
 		</div>
 	);

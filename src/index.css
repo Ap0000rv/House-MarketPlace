@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
 * {
 	box-sizing: border-box;
+	padding: 0;
 }
 
 html::-webkit-scrollbar {
@@ -820,4 +821,9 @@ button {
 	margin-left: 1rem;
 	font-size: 0.8rem;
 	opacity: 0.75;
+}
+
+.space{
+	margin-bottom: 110px;
+	visibility: hidden;
 }
